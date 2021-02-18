@@ -17,7 +17,7 @@
 ## Install/Import
 `npm install ServerfulArch/Public`
 ```js
-const Serverful = require("@serverful/public");
+const Public = require("@serverful/public");
 // ...
 ```
 
@@ -25,7 +25,6 @@ const Serverful = require("@serverful/public");
 # Usage
 Serve `/public/*` resources automatically.
 ```js
-const Public = require("@serverful/public");
 const MyServer = new Serverful(80);
 MyServer.Gateway("public", Public("./WebContent/Public/"));
 ```
