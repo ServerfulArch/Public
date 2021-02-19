@@ -19,7 +19,7 @@ module.exports = Pathlike => {
             encoding: "utf-8"
         });
     
-        Endpoints.set(Endpoint, {
+        Endpoints.set(Dest.toLowerCase(), {
             Resource: Resource instanceof Buffer ?
                 Buffer.from(Resource) : Resource,
             Type: {
@@ -35,7 +35,7 @@ module.exports = Pathlike => {
     }
 
     return Packet => {
-        const URL = Packet.URL.Raw.toLowerCase();
+        const URL = Packet.URL.Endpoint.toLowerCase();
         const Content = Endpoints.get(URL);
         if (!Content) return Packet.Request.End(404);
 
