@@ -15,7 +15,7 @@
 * [Github](https://github.com/Serverful/Public)
 
 ## Install/Import
-`npm install ServerfulArch/Public`
+`npm install @serverful/public`
 ```js
 const Public = require("@serverful/public");
 // ...
