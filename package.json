@@ -12,7 +12,9 @@
   "bugs": {
     "url": "https://github.com/ServerfulArch/Public/issues"
   },
-  "dependencies": {},
+  "peerDependencies": {
+    "etag": "1.x"
+  },
   "optionalDependencies": {},
   "devDependencies": {}
 }
