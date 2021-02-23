@@ -4,7 +4,7 @@
 
 [[Contribute](#issues-contributing--license)] [[Documentation](https://github.com/ServerfulArch/Core/blob/v4/Documentation/Index.md)]
 
-> A file serving extension for the Serverful core
+> An extension to automate file serving in a specific directory.
 
 
 # Main Features
@@ -28,6 +28,7 @@ Serve `/public/*` resources automatically.
 const MyServer = new Serverful(80);
 MyServer.Gateway("public", Public("./WebContent/Public/"));
 ```
+
 
 # Issues, Contributing & License
 Before making an issue for a bug or feature submittion, please ensure that it hasn't already been created [on the repository](https://github.com/ServerfulArch/Public/issues).
