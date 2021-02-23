@@ -3,13 +3,15 @@
 
 const FS   = require("fs");
 const Path = require("path");
+const ETag = require("etag");
 
 /**
  * Instantiates a file serving extension for a Serverful server.
  * @param {String} Pathlike Directory with "public" files to handle.
+ * @param {Number} [Cache] Amount of seconds to cache this resource on the client.
  * @returns {Function} A gateway handler.
  */
-module.exports = Pathlike => {
+module.exports = (Pathlike, Cache = 300) => {
 
     const Endpoints = new Map();
 
@@ -39,7 +41,12 @@ module.exports = Pathlike => {
         const Content = Endpoints.get(URL);
         if (!Content) return Packet.Request.End(404);
 
-        Packet.Request.Headers("Content-Type", Content.Type);
+        Packet.Request.Headers({
+            "ETag":          ETag(Content.Resource),
+            "Cache-Control": `max-age=${Cache}`,
+            "Content-Type":  Content.Type
+        });
+
         Packet.Request.Write(Content.Resource);
         return Packet.Request.End(200);
     }
