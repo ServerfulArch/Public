@@ -43,7 +43,7 @@ module.exports = (Pathlike, Cache = 300) => {
 
         Packet.Request.Headers({
             "ETag":          ETag(Content.Resource),
-            "Cache-Control": `max-age=${Cache}`,
+            "Cache-Control": Cache === -1 ? "no-store" : `max-age=${Cache}`,
             "Content-Type":  Content.Type
         });
 
