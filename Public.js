@@ -16,7 +16,9 @@ module.exports = (Pathlike, Cache = 300) => {
     const Endpoints = new Map();
 
     for (const Dest of FS.readdirSync(Pathlike)) {
+        if (/^[\._]/.test(Dest)) return;
         const Endpoint = Path.join(Pathlike, Dest);
+
         const Resource = FS.readFileSync(Endpoint, {
             encoding: "utf-8"
         });
