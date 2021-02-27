@@ -5,6 +5,16 @@ const FS   = require("fs");
 const Path = require("path");
 const ETag = require("etag");
 
+const Types = {
+    js:   "application/javascript",
+    json: "application/json",
+    png:  "image/png",
+    svg:  "image/svg+xml",
+    ico:  "image/x-icon",
+    html: "text/html",
+    css:  "text/css"
+};
+
 /**
  * Instantiates a file serving extension for a Serverful server.
  * @param {String} Pathlike Directory with "public" files to handle.
@@ -32,15 +42,7 @@ module.exports = (Pathlike, Cache = 300) => {
             Endpoints.set(Endpoint.toLowerCase(), {
                 Resource: Resource instanceof Buffer ?
                     Buffer.from(Resource) : Resource,
-                Type: {
-                    js:   "application/javascript",
-                    json: "application/json",
-                    png:  "image/png",
-                    svg:  "image/svg+xml",
-                    ico:  "image/x-icon",
-                    html: "text/html",
-                    css:  "text/css"
-                }[File.split(".").pop()]
+                Type: Types[File.split(".").pop()]
             });
         }
     })("/");
