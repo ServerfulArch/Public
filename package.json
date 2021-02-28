@@ -1,6 +1,6 @@
 {
   "name": "@serverful/public",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A file serving extension for the Serverful core",
   "main": "Public.js",
   "scripts": {},

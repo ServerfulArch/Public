@@ -20,7 +20,7 @@ const Public = require("@serverful/public");
 
 
 # Usage
-Serve `/public/*` resources automatically.
+Serve `/public/**` resources automatically.
 ```js
 const MyServer = new Serverful(80);
 MyServer.Gateway("public", Public("./WebContent/Public/"));
