@@ -8,7 +8,6 @@
 * Automatic file serving of a directory.
 
 ## Links
-* [Documentations](https://github.com/ServerfulArch/Public/blob/master/Documentation/Index.md)
 * [Github](https://github.com/Serverful/Public)
 
 ## Installation
