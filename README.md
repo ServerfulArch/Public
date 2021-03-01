@@ -6,6 +6,7 @@
 
 # Features
 * Automatic file serving of a directory.
+* Customisable cache parameters.
 
 ## Links
 * [Github](https://github.com/Serverful/Public)
